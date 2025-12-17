@@ -206,24 +206,11 @@
                   <p>github.com/rrmpnoopopmt-tech</p>
                 </div>
               </div>
-              
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fab fa-linkedin-in"></i>
-                </div>
-                <div class="contact-text">
-                  <h4>LinkedIn</h4>
-                  <p>linkedin.com/in/ilya-dev</p>
-                </div>
-              </div>
             </div>
             
             <div class="social-links">
               <a href="https://github.com/rrmpnoopopmt-tech" class="social-link">
                 <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-linkedin-in"></i>
               </a>
               <a href="https://t.me/+ZHkgN26qtFwyNWEy" class="social-link">
                 <i class="fab fa-telegram"></i>
@@ -274,9 +261,6 @@
             <a href="https://github.com/rrmpnoopopmt-tech">
               <i class="fab fa-github"></i>
             </a>
-            <a href="#">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
             <a href="https://t.me/+ZHkgN26qtFwyNWEy">
               <i class="fab fa-telegram"></i>
             </a>
@@ -291,7 +275,7 @@
   </div>
 
   <script>
-    // Инициализация снега
+  
     document.addEventListener('DOMContentLoaded', function() {
       let canvas, ctx;
       let flakes = [];
@@ -302,7 +286,7 @@
         canvas = document.getElementById('snow-canvas');
         ctx = canvas.getContext('2d');
         
-        // Установка размеров canvas
+        
         function resizeCanvas() {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
@@ -311,7 +295,7 @@
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
         
-        // Создание снежинок
+        
         for (let i = 0; i < 150; i++) {
           flakes.push({
             x: Math.random() * canvas.width,
@@ -323,36 +307,34 @@
           });
         }
         
-        // Отслеживание мыши
+      
         document.addEventListener('mousemove', (e) => {
           mouseX = e.clientX;
-          // Ветер: от центра к краям
+         
           windX = (mouseX - canvas.width / 2) * 0.001;
         });
         
-        // Анимация
+        
         function animate() {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           
-          // Обновление и отрисовка снежинок
+       
           flakes.forEach(flake => {
             flake.y += flake.speed;
             flake.x += windX + Math.cos(flake.wobble) * 0.5;
             flake.wobble += flake.wobbleSpeed;
             
-            // Сброс при выходе за пределы экрана
+            
             if (flake.y > canvas.height + 50) {
               flake.y = -50;
               flake.x = Math.random() * canvas.width;
             }
             
-            // Отрисовка снежинки
             ctx.beginPath();
             ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(250, 250, 255, ${0.7 + Math.random() * 0.3})`;
             ctx.fill();
             
-            // Блик
             ctx.beginPath();
             ctx.arc(flake.x - flake.size * 0.3, flake.y - flake.size * 0.3, flake.size * 0.3, 0, Math.PI * 2);
             ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
@@ -365,10 +347,8 @@
         animate();
       }
       
-      // Инициализация после загрузки
       initSnow();
       
-      // Обработка формы
       const contactForm = document.getElementById('contactForm');
       if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -378,7 +358,6 @@
           const email = document.getElementById('email').value.trim();
           const message = document.getElementById('message').value.trim();
           
-          // Простая валидация
           if (!name || !email || !message) {
             alert('Все поля обязательны для заполнения');
             return;
@@ -394,7 +373,6 @@
         });
       }
       
-      // Плавная прокрутка для якорных ссылок
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
@@ -409,7 +387,6 @@
       });
     });
 
-    // Гирлянда в шапке
 const headerBulbs = document.querySelectorAll('header .bulb');
 let mouseX = window.innerWidth / 2;
 
