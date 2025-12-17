@@ -832,3 +832,16 @@ header .bulb {
 .project-card:hover img.project-image {
   transform: scale(1.05); /* лёгкое увеличение при наведении */
 }
+
+
+.avatar-image {
+  width: 50%;
+  height: 50%;
+  object-fit: cover; 
+  border-radius: 50px; 
+}
+
+
+.avatar i {
+  display: none;
+}
